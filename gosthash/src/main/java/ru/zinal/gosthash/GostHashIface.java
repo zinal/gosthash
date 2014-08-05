@@ -39,7 +39,7 @@ public interface GostHashIface {
 
   /**
    * Получить результат - хеш-сумму
-   * @return
+   * @return Подсчитанное значение хэша
    */
   byte[] finishHash();
 
@@ -47,7 +47,7 @@ public interface GostHashIface {
    * Подсчитать контрольную сумму файла
    * При ошибке ввода-вывода (включая отсутствие файла) вернуть null.
    * @param file
-   * @return
+   * @return Подсчитанное значение хэша
    */
   byte[] calcHash(java.io.File file);
 

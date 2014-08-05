@@ -6,13 +6,36 @@
 
   <groupId>ru.zinal</groupId>
   <artifactId>gosthash</artifactId>
-  <version>1.0.1</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Gost 34.11-94 Java</name>
   <description>
     Pure Java Russian GOST 34.11-94 hash implementation
   </description>
+  <url>https://github.com/zinal/gosthash</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Maxim Zinal</name>
+      <email>MaxZinal@yandex.ru</email>
+      <organization>private person</organization>
+      <organizationUrl>https://github.com/zinal</organizationUrl>
+    </developer>
+  </developers>
+  
+  <scm>
+    <connection>scm:git:git@github.com:zinal/gosthash.git</connection>
+    <developerConnection>scm:git:git@github.com:zinal/gosthash.git</developerConnection>
+    <url>git@github.com:zinal/gosthash.git</url>
+  </scm>
 
   <dependencies>
     <dependency>
@@ -88,6 +111,21 @@
           </execution>
         </executions>
       </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
 
@@ -95,14 +133,12 @@
 
   <distributionManagement>
     <repository>
-      <id>internal</id>
-      <name>Internal Release Repository</name>
-      <url>http://mvn:8080/archiva/repository/internal/</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
     <snapshotRepository>
-      <id>snapshots</id>
-      <name>Internal Snapshot Repository</name>
-      <url>http://mvn:8080/archiva/repository/snapshots/</url>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 

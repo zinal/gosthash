@@ -1,5 +1,5 @@
 
-JAVA_HOME=/opt/JDK
+JAVA_HOME=/opt/java/jdk1.6.0_38
 OPTFLAGS=-O2 -fPIC -Wall
 #OPTFLAGS=-g -fPIC -Wall
 
